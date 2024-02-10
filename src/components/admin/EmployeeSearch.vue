@@ -50,14 +50,14 @@
          <div class="box-body table-responsive">
             <b-table responsive striped bordered :items="employees" :fields="fields" 
                show-empty empty-text="Dados não encontrados">
-               <template slot="select" slot-scope="data">
+               <template #cell(select)="data">
                   <div class="text-center-align">
                      <router-link :to="{name: 'timesheetGroup', params: { id: data.item.id }}" class="mr-2 btn btn-primary">
                         <i class="fa fa-check"></i>
                      </router-link>
                   </div>
                </template>
-               <template slot="empty" slot-scope="scope">
+               <template #empty="scope">
                   <h4>{{scope.emptyText}}</h4>
                </template>
             </b-table>

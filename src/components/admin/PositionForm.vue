@@ -24,6 +24,14 @@
                   </div>
                </div>
             </div>
+            <div class="form-group">
+               <label class="col-sm-2 control-label"></label>
+               <div class="col-sm-2 checkbox">
+                     <label>
+                     <input type="checkbox" id="dangerousness" v-model="position.dangerousness"> Possui periculosidade
+                     </label>
+                  </div>
+            </div>
             <div class="box-footer">
                <div class="col-sm-9 col-sm-offset-2">
                   <button type="submit" class="btn btn-primary" @click.prevent="save"><i class="fa fa-save" aria-hidden="true"></i>&nbsp;Salvar</button>&nbsp;

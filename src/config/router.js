@@ -80,7 +80,7 @@ const routes = [{
 },
 {
     name: 'timesheetForm',
-    path: '/timesheet/:employeeId/:year/:month',
+    path: '/timesheet/:employeeId/:year/:month/:period',
     component: TimesheetForm
 },
 {

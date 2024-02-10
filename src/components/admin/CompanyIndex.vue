@@ -40,19 +40,19 @@
          <div class="box-body table-responsive">
             <b-table responsive striped bordered :items="companies" :fields="fields" 
                show-empty empty-text="Dados não encontrados">
-               <template slot="edit" slot-scope="data">
+               <template #cell(edit)="data">
                   <div class="text-center-align">
                      <router-link :to="{name: 'companyForm', params: { id: data.item.id }}" class="mr-2 btn btn-primary">
                         <i class="fa fa-pencil"></i>
                      </router-link>
                   </div>
                </template>
-               <template slot="delete" slot-scope="data">
+               <template #cell(delete)="data">
                   <div class="text-center-align">
                      <b-button class="mr-2 btn btn-default" @click="openDeleteModal(data.item)"><i class="fa fa-remove"></i></b-button>
                   </div>
                </template>
-               <template slot="empty" slot-scope="scope">
+               <template #empty="scope">
                   <h4>{{scope.emptyText}}</h4>
                </template>
             </b-table>

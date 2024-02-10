@@ -31,7 +31,7 @@
         </div>
         <div class="box-body table-responsive">
             <b-table responsive striped bordered :items="bonuses" :fields="fields" show-empty empty-text="Dados não encontrados">
-                <template slot="delete" slot-scope="data">
+                <template #cell(delete)="data">
                     <div class="text-center-align">
                         <b-button class="mr-2 btn btn-primary" @click="openDeleteModal(data.item)"><i class="fa fa-remove"></i></b-button>
                     </div>
