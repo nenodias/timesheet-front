@@ -52,7 +52,7 @@
                     <td class="report-cell"> {{ timesheet.paidNightTime }} </td>
             </tr>
         </table>
-        <table class="table">
+        <table class="table valor-hora">
             <tr>
                 <td class="report-cell"><b>Valor hora</b></td>
                 <td class="report-cell"><b>100%</b></td>
@@ -66,7 +66,7 @@
                 <td class="report-cell">{{ report.twentyPercentFormatted }}</td>
             </tr>
         </table>
-        <table class="table">
+        <table class="table eventos">
             <tr>
                 <td class="report-cell">Evento</td>
                 <td class="report-cell">Descrição</td>
@@ -135,15 +135,6 @@
                 .catch(showError)
             },
             fetchBonuses() {
-                const { employeeParam } = this.employeeId
-                const { yearParam } = this.year
-                const { monthParam } = this.month
-  
-                const url = `${baseApiUrl}/bonus/${employeeParam}/${yearParam}/${monthParam}`
-                axios.get(url).then(response => this.bonuses = response.data)
-                .catch(showError)
-            },
-            fetchBonuses() {
                 const url = `${baseApiUrl}/timesheet/docket/${this.employeeParam}/${this.yearParam}/${this.monthParam}`
                 axios.get(url)
                 .then(response => this.report = response.data)
@@ -165,6 +156,7 @@
 <style>
     @page {
         margin: 0;
+
     }
 
     @media print {
@@ -172,12 +164,18 @@
             display: none;
         }
         .section-to-print {
-            display: block;;
-        }        
+            display: block;
+        }
+        .valor-hora * {
+            font-size: 8px;
+        }
+        .eventos * {
+            font-size: 10px;
+        }
     }
 
     .title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
     }
 
